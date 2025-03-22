@@ -1,0 +1,89 @@
+h1 {
+    height: 50px;
+    margin: 20px 0;
+}
+
+.container {
+    width: 1180px;
+    height: 600px;
+}
+
+.category {
+    width: 70px;
+    height: 100%;
+
+    >.category-item {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: var(--font-size-base);
+        color: var(--white);
+        border-top-left-radius: var(--border-radius-lg);
+        border-bottom-left-radius: var(--border-radius-lg);
+    }
+
+    @for $i from 1 through 4 {
+        .category-item:nth-child(4n + #{$i}) {
+            @if $i ==1 {
+                background-color: var(--primary-color);
+            }
+
+            @else if $i ==2 {
+                background-color: var(--success-color);
+            }
+
+            @else if $i ==3 {
+                background-color: var(--warning-color);
+            }
+
+            @else if $i ==4 {
+                background-color: var(--error-color);
+            }
+        }
+    }
+}
+
+.coms {
+    width: calc(1180px - 60px);
+    height: 100%;
+}
+
+.layout-container {
+    width: 100%;
+    // Header组件高度50px，h1高度50px，上下margin 20px，最后20px是额外多减去一部分，避免贴底
+    height: calc(100vh - 100px - 40px - 20px);
+    align-items: flex-start;
+    border: 1px solid var(--border-color);
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+}
+
+.left {
+    width: 180px;
+    text-align: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.center {
+    width: 550px;
+    // 多减去的60px是上下的padding，，最后20px是额外多减去一部分，避免贴底
+    height: calc(100vh - 100px - 40px - 60px - 20px);
+    overflow-y: scroll;
+    padding: 30px;
+    border-left: 1px solid var(--border-color);
+}
+
+.right {
+    width: 350px;
+    height: calc(100vh - 100px - 40px - 20px);
+    overflow-y: scroll;
+    border-left: 1px solid var(--border-color);
+}
