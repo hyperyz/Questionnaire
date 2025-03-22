@@ -10,6 +10,7 @@ function index(): React.ReactElement {
             <div>
                 <h1 className="font-weight-100 text-center m0 p0">组件市场</h1>
                 <div className={`${styles.container} mc flex`}>
+                    {/* 左侧垂直导航栏 */}
                     <nav className={`${styles.category} mc`}>
                         <Link className={styles['category-item']} to="/materials">
                             <CheckOutlined />
@@ -36,6 +37,7 @@ function index(): React.ReactElement {
                             <div>联系方式</div>
                         </Link>
                     </nav>
+                    {/* 右侧三列布局 */}
                     <div className={styles.coms}>
                         <Outlet />
                     </div>

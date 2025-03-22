@@ -1,14 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Materials from "../pages/Materials";
+import Materials from "../pages/ComponentsMarket";
 import Editor from "../pages/Editor";
 import Home from "../pages/Home";
-import SelectGroup from "@/pages/Materials/SelectGroup";
-import InputGroup from "@/pages/Materials/InputGroup";
-import NoteGroup from "@/pages/Materials/NoteGroup";
-import ContactGroup from "@/pages/Materials/ContactGroup";
-import AdvancedGroup from "@/pages/Materials/AdvancedGroup";
-import InfoGroup from "@/pages/Materials/InfoGroup";
-
+import SelectGroup from "@/pages/ComponentsMarket/SelectGroup";
+import InputGroup from "@/pages/ComponentsMarket/InputGroup";
+import NoteGroup from "@/pages/ComponentsMarket/NoteGroup";
+import ContactGroup from "@/pages/ComponentsMarket/ContactGroup";
+import AdvancedGroup from "@/pages/ComponentsMarket/AdvancedGroup";
+import InfoGroup from "@/pages/ComponentsMarket/InfoGroup";
+import SingleSelect from "@/components/SurveyComs/Materials/SelectComs/SingleSelect"
+import MultiSelect from "@/components/SurveyComs/Materials/SelectComs/MultiSelect"
+import OptionSelect from "@/components/SurveyComs/Materials/SelectComs/OptionSelect"
+import SinglePicSelect from "@/components/SurveyComs/Materials/SelectComs/SinglePicSelect";
+import MultiPicSelect from "@/components/SurveyComs/Materials/SelectComs/MultiPicSelect";
 export default createBrowserRouter([
     {
         path: '/',
@@ -18,7 +22,17 @@ export default createBrowserRouter([
         path: '/materials',
         Component: Materials,
         children: [
-            { index: true, Component: SelectGroup },
+            {
+                path: '',
+                Component: SelectGroup,
+                children: [
+                    { path: 'single-select', Component: SingleSelect },
+                    { path: 'multi-select', Component: MultiSelect },
+                    { path: 'option-select', Component: OptionSelect },
+                    { path: 'single-pic-select', Component: SinglePicSelect },
+                    { path: 'multi-pic-select', Component: MultiPicSelect }
+                ]
+            },
             { path: 'input-group', Component: InputGroup },
             { path: 'note-group', Component: NoteGroup },
             { path: 'contact-group', Component: ContactGroup },
