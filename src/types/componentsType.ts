@@ -2,7 +2,6 @@ export interface IBase {
     id: string;
     isShow: boolean;
     name: string;
-    editCom: React.ReactNode
 }
 
 export interface IStatusText extends IBase {

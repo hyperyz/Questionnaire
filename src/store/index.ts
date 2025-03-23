@@ -7,7 +7,4 @@ export default configureStore({
         coms: comsSlice.reducer,
         editor: editorSlice.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware(
-        { serializableCheck: false }
-    ),
 })

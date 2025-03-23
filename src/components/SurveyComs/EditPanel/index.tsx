@@ -1,11 +1,13 @@
 import React from "react"
 import styles from "./index.module.scss"
-
+import { nameToEditorComMap } from "@/configs/nameToEditorMap";
 function EditPanel({ coms }: any): React.ReactElement {
 
     function handleEditItems(coms: any) {
         return Object.keys(coms.status).map((key: string) => {
-            const EditComponent = coms.status[key].editCom;
+            const comName = coms.status[key].name;
+            const EditComponent = nameToEditorComMap[comName];
+
             if (coms.status[key].isShow) {
                 return (
                     <div key={key}>

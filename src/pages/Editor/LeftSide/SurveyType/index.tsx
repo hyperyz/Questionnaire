@@ -6,7 +6,7 @@ function SurveyType() {
         <div className={styles['survey-type-container']}>
             {
                 SurveyComsList.map(coms => (
-                    <SurveyComGroup key={coms.title} title={coms.title} list={coms.list} icon={coms.icon}/>
+                    <SurveyComGroup key={coms.title} title={coms.title} list={coms.list} />
                 ))
             }
         </div>
