@@ -1,7 +1,9 @@
 import { Input } from "antd"
 import { useDispatch } from "react-redux";
 import { updateStatus } from "@/store/comsSlice";
-function TitleEditor({ configKey, configs }: any) {
+import { IEditText } from "@/types/componentsType";
+
+function TitleEditor({ configKey, configs }: IEditText) {
     const dispatch = useDispatch();
 
     const handleTitleChange = (e: any) => {

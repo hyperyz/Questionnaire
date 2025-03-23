@@ -1,4 +1,4 @@
-import Header from '@/components/common/Header'
+import Header from '@/components/Common/Header'
 import styles from './index.module.scss'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'

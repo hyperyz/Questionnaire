@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './index.module.scss';
 
 interface IMaterialHeaderProps {
@@ -13,6 +12,8 @@ interface IMaterialHeaderProps {
     titleColor: string;
     descColor: string;
 }
+
+// 每个小组件的共同头部，title+desc
 function MaterialsHeader({ title, desc, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor }: IMaterialHeaderProps): React.ReactElement {
     return (
         <div className={`${styles.container} mb-15`}>

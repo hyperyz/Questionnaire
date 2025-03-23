@@ -1,4 +1,4 @@
-import Layout from '../Layout'
+import Layout from '../MarketLayout'
 import { Link } from 'react-router-dom'
 
 function NoteGroup(): React.ReactElement {

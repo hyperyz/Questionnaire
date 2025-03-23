@@ -1,7 +1,7 @@
-import Layout from '../Layout'
+import Layout from '../MarketLayout'
 import { Link } from 'react-router-dom'
 
-function ContactGroup():React.ReactElement {
+function ContactGroup(): React.ReactElement {
     return (
         <Layout>
             <Link to="/" className='link-item mb-15'>手机</Link>

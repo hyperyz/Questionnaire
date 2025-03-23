@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom'
 import styles from './index.module.scss'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { MenuOutlined, ProfileOutlined } from '@ant-design/icons'
+
+// 编辑页-左侧
 function LeftSide() {
   const navigate = useNavigate()
   const location = useLocation()

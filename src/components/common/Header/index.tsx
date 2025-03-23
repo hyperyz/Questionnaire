@@ -1,10 +1,10 @@
 import { Button, Avatar } from 'antd'
 import { LeftCircleOutlined, UserOutlined } from '@ant-design/icons';
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss'
 
-function index(): React.ReactElement {
+// 组件市场页与问卷编辑页的共同header
+function Header(): React.ReactElement {
     const navigate = useNavigate();
     return (
         <>
@@ -20,4 +20,4 @@ function index(): React.ReactElement {
     )
 }
 
-export default index
+export default Header

@@ -2,7 +2,8 @@ import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { useDispatch } from "react-redux";
 import { updateStatus } from "@/store/comsSlice";
-function SizeEditor({ configKey, configs }) {
+import { IEditArray } from "@/types/componentsType";
+function SizeEditor({ configKey, configs }: IEditArray) {
 
     const dispatch = useDispatch()
     const statusArr = configs.status

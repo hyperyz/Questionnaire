@@ -1,5 +1,5 @@
 import React from "react"
-import Header from '@/components/common/Header'
+import Header from '@/components/Common/Header'
 import { CheckOutlined, EditOutlined, FileOutlined, PhoneOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons'
 import styles from './index.module.scss'
 import { Link, Outlet } from "react-router-dom"

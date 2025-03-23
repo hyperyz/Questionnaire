@@ -2,8 +2,9 @@ import ButtonGroup from "../ButtonGroup"
 import { ColorPicker } from 'antd';
 import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
+import { IEditText } from "@/types/componentsType";
 
-function ColorEditor({ configKey, configs }) {
+function ColorEditor({ configKey, configs }: IEditText) {
     const dispatch = useDispatch();
     const handleColorChange = (color: any) => {
         dispatch(updateStatus({ configKey, status: color.toHexString() }));

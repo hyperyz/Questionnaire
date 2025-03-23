@@ -1,6 +1,6 @@
-import React from 'react'
 import styles from './index.module.scss'
-function ButtonGroup({ title, status, children }) {
+import { IButtonGroup } from '@/types/componentsType'
+function ButtonGroup({ title, status, children }: IButtonGroup) {
     return (
         <div className='flex align-items-center space-between'>
             <div className='flex align-items-center'>

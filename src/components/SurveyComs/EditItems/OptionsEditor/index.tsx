@@ -2,9 +2,9 @@ import { Button, Input, message } from "antd"
 import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
-import { v4 as uuid } from "uuid";
+import { IEditArray } from "@/types/componentsType";
 
-function DescEditor({ configKey, configs }: any) {
+function DescEditor({ configKey, configs }: IEditArray) {
     const dispatch = useDispatch();
 
     const handleAddOption = () => {
