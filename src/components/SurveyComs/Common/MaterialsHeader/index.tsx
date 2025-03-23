@@ -14,8 +14,6 @@ interface IMaterialHeaderProps {
     descColor: string;
 }
 function MaterialsHeader({ title, desc, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor }: IMaterialHeaderProps): React.ReactElement {
-    console.log(title, desc, titleSize, descSize);
-
     return (
         <div className={`${styles.container} mb-15`}>
             <h2 className='title font-weight-100' style={{ fontSize: titleSize + 'px', color: titleColor }}>

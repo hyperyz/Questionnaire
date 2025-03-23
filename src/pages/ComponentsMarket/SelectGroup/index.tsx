@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 function SelectGroup(): React.ReactElement {
     return (
         <Layout>
-            <NavLink to="/materials/single-select"
+            <NavLink to="/materials/"
                 className={({ isActive }) => isActive ? "link-item mb-15 link-item-active" : "link-item mb-15"}>单选题</NavLink>
             <NavLink to="/materials/multi-select" className={({ isActive }) => isActive ? "link-item mb-15 link-item-active" : "link-item mb-15"}>多选题</NavLink>
             <NavLink to="/materials/option-select" className={({ isActive }) => isActive ? "link-item mb-15 link-item-active" : "link-item mb-15"}>下拉选择</NavLink>

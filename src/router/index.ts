@@ -26,7 +26,7 @@ export default createBrowserRouter([
                 path: '',
                 Component: SelectGroup,
                 children: [
-                    { path: 'single-select', Component: SingleSelect },
+                    { index: true, Component: SingleSelect },
                     { path: 'multi-select', Component: MultiSelect },
                     { path: 'option-select', Component: OptionSelect },
                     { path: 'single-pic-select', Component: SinglePicSelect },

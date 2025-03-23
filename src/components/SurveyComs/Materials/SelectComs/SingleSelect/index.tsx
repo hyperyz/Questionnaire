@@ -1,18 +1,16 @@
 import MaterialsHeader from "@/components/SurveyComs/Common/MaterialsHeader"
 import { Radio } from 'antd';
-import { useSelector, useDispatch } from 'react-redux';
 import type { RadioChangeEvent } from 'antd';
+import { useOutletContext } from "react-router-dom";
 
 
 function SingleSelect() {
-  const currentCom = useSelector(state => state.currentMaterialCom)
-  const allComs = useSelector(state => state.coms)
-  const status = allComs[currentCom].status
+  const status: any = useOutletContext();
+
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = status
-  const dispatch = useDispatch()
-  console.log("看一看", status);
+  // const dispatch = useDispatch()
   const onChange = (e: RadioChangeEvent) => {
-    setValue(e.target.value);
+    // setValue(e.target.value);
   };
   return (
     <div className={position.currentStatus === 0 ? "" : "text-center"}>

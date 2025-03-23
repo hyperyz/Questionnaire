@@ -1,6 +1,17 @@
-function ColorEditor() {
+import ButtonGroup from "../ButtonGroup"
+import { ColorPicker } from 'antd';
+import { updateStatus } from "@/store";
+import { useDispatch } from "react-redux";
+
+function ColorEditor({ configKey, configs }) {
+    const dispatch = useDispatch();
+    const handleColorChange = (color: any) => {
+        dispatch(updateStatus({ configKey, status: color.toHexString() }));
+    }
     return (
-        <div>颜色编辑组件</div>
+        <ButtonGroup title={`${configKey === 'titleColor' ? '标题' : '描述'}颜色`} status={configs.status}>
+            <ColorPicker value={configs.status} onChange={handleColorChange} />
+        </ButtonGroup>
     )
 }
 
