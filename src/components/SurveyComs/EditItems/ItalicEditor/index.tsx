@@ -1,7 +1,7 @@
 import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { ItalicOutlined } from '@ant-design/icons';
-import { updateStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 
 function ItalicEditor({ configKey, configs }) {

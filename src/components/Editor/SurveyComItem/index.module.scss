@@ -1,0 +1,13 @@
+.survey-com-item-container {
+    width: 60px;
+    height: 30px;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    color: var(--font-color-light);
+    user-select: none;
+}
+
+.survey-com-item-container:hover {
+    background-color: var(--font-color-lightest);
+}

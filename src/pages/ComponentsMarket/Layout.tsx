@@ -3,10 +3,10 @@ import styles from './index.module.scss';
 import EditPanel from '@/components/SurveyComs/EditPanel';
 import { useSelector } from 'react-redux';
 function Layout({ children }: { children: React.ReactNode }): React.ReactElement<React.ReactElement<any>> {
-    const currentCom = useSelector(state => state.currentMaterialCom)
-    const allComs = useSelector(state => state.coms)
+    const comsSlice = useSelector(state => state.coms)
+    const allComs = comsSlice.coms
+    const currentCom = comsSlice.currentMaterialCom
     const status = allComs[currentCom].status
-    console.log('status:', status);
 
     return (
         <div className={`${styles['layout-container']} flex`}>

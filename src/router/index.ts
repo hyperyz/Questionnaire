@@ -13,6 +13,8 @@ import MultiSelect from "@/components/SurveyComs/Materials/SelectComs/MultiSelec
 import OptionSelect from "@/components/SurveyComs/Materials/SelectComs/OptionSelect"
 import SinglePicSelect from "@/components/SurveyComs/Materials/SelectComs/SinglePicSelect";
 import MultiPicSelect from "@/components/SurveyComs/Materials/SelectComs/MultiPicSelect";
+import Outline from "@/pages/Editor/LeftSide/Outline";
+import SurveyType from "@/pages/Editor/LeftSide/SurveyType";
 export default createBrowserRouter([
     {
         path: '/',
@@ -42,6 +44,16 @@ export default createBrowserRouter([
     },
     {
         path: '/editor',
-        Component: Editor
+        Component: Editor,
+        children: [
+            {
+                path: '',
+                Component: SurveyType
+            },
+            {
+                path: 'outline',
+                Component: Outline
+            }
+        ]
     }
 ])

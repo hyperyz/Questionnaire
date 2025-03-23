@@ -1,9 +1,24 @@
+import Header from '@/components/common/Header'
+import styles from './index.module.scss'
+import LeftSide from './LeftSide'
+import RightSide from './RightSide'
+import Center from './Center'
 
-
-function index(): React.ReactElement {
+function Editor(): React.ReactElement {
     return (
-        <div>编辑器页面</div>
+        <div>
+            <div className={styles.header}>
+                <Header />
+            </div>
+            <div className={styles.container}>
+                <LeftSide />
+                <RightSide />
+            </div>
+            <div>
+                <Center />
+            </div>
+        </div>
     )
 }
 
-export default index
+export default Editor

@@ -1,6 +1,6 @@
 import { Button, Input, message } from "antd"
 import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
-import { updateArrayStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
 
@@ -10,7 +10,7 @@ function DescEditor({ configKey, configs }: any) {
     const handleAddOption = () => {
         const len = configs.status.length;
         const arr = [...configs.status, `新增选项${len + 1}`]
-        dispatch(updateArrayStatus({ configKey, arr }))
+        dispatch(updateStatus({ configKey, status: arr }))
     }
 
     const handleRemoveOption = (index: number) => {
@@ -19,7 +19,7 @@ function DescEditor({ configKey, configs }: any) {
             return;
         } else {
             const arr = configs.status.filter((_: any, i: number) => i !== index)
-            dispatch(updateArrayStatus({ configKey, arr }))
+            dispatch(updateStatus({ configKey, status: arr }))
             message.success('删除成功')
         }
     }
@@ -33,10 +33,10 @@ function DescEditor({ configKey, configs }: any) {
                 return item
             }
         })
-        dispatch(updateArrayStatus({ configKey, arr }))
+        dispatch(updateStatus({ configKey, status: arr }))
     }
     console.log(configs);
-    
+
     return (
         <>
             <div className="flex align-items-center mb-10">

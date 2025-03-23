@@ -1,12 +1,12 @@
 import { Input } from "antd"
 import { useDispatch } from "react-redux";
-import { updateTextStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 function TitleEditor({ configKey, configs }: any) {
     const dispatch = useDispatch();
 
     const handleTitleChange = (e: any) => {
         const text = e.target.value;
-        dispatch(updateTextStatus({configKey, text}))
+        dispatch(updateStatus({ configKey, status: text }))
     }
 
     return (

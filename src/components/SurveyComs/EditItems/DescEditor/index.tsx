@@ -1,6 +1,6 @@
 import { Input } from "antd"
 import { useDispatch } from "react-redux";
-import { updateTextStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 
 const { TextArea } = Input;
 function DescEditor({ configKey, configs }: any) {
@@ -8,7 +8,7 @@ function DescEditor({ configKey, configs }: any) {
 
     const handleDescChange = (e: any) => {
         const text = e.target.value;
-        dispatch(updateTextStatus({ configKey, text }))
+        dispatch(updateStatus({ configKey, status:text }))
     }
     return (
         <div>

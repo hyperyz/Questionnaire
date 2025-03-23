@@ -1,7 +1,7 @@
 import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { AlignCenterOutlined, AlignLeftOutlined } from '@ant-design/icons';
-import { updateStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 function PositionEditor({ configKey, configs }) {
     const dispatch = useDispatch()

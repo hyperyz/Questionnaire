@@ -1,6 +1,6 @@
 import ButtonGroup from "../ButtonGroup"
 import { ColorPicker } from 'antd';
-import { updateStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 
 function ColorEditor({ configKey, configs }) {

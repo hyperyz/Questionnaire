@@ -2,7 +2,7 @@
 import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { BoldOutlined } from '@ant-design/icons';
-import { updateStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 function WeightEditor({ configKey, configs }) {
     const dispatch = useDispatch()

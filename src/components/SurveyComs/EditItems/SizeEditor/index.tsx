@@ -1,7 +1,7 @@
 import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { useDispatch } from "react-redux";
-import { updateStatus } from "@/store";
+import { updateStatus } from "@/store/comsSlice";
 function SizeEditor({ configKey, configs }) {
 
     const dispatch = useDispatch()
