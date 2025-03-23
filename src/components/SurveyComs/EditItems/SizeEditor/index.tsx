@@ -2,13 +2,21 @@ import ButtonGroup from "../ButtonGroup"
 import { Radio } from 'antd';
 import { useDispatch } from "react-redux";
 import { updateStatus } from "@/store/comsSlice";
+import { updateStatus as updateStatusInEditor } from "@/store/editorSlice";
 import { IEditArray } from "@/types/componentsType";
+import { useLocation } from "react-router-dom";
+
 function SizeEditor({ configKey, configs }: IEditArray) {
 
     const dispatch = useDispatch()
+    const location = useLocation()
     const statusArr = configs.status
     const handleSizeChange = (value: number) => {
-        dispatch(updateStatus({ configKey, status: value }))
+        if (location.pathname.includes('editor')) {
+            dispatch(updateStatusInEditor({ configKey, status: value }))
+        } else {
+            dispatch(updateStatus({ configKey, status: value }))
+        }
     }
 
     return (

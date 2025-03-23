@@ -5,12 +5,20 @@ import { BoldOutlined } from '@ant-design/icons';
 import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 import { IEditArray } from "@/types/componentsType";
+import { updateStatus as updateStatusInEditor } from "@/store/editorSlice";
+import { useLocation } from "react-router-dom";
+
 function WeightEditor({ configKey, configs }: IEditArray) {
     const dispatch = useDispatch()
+    const location = useLocation()
     const statusArr = configs.status
 
     const handleItalicChange = (value: number) => {
-        dispatch(updateStatus({ configKey, status: value }))
+        if (location.pathname.includes('editor')) {
+            dispatch(updateStatusInEditor({ configKey, currentStatus: value }))
+        } else {
+            dispatch(updateStatus({ configKey, status: value }))
+        }
     }
     return (
         <ButtonGroup title={`${configKey === 'titleWeight' ? '标题' : '描述'}加粗`} status={statusArr[configs.currentStatus]}>

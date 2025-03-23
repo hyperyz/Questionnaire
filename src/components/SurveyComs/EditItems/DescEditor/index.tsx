@@ -2,13 +2,19 @@ import { Input } from "antd"
 import { useDispatch } from "react-redux";
 import { updateStatus } from "@/store/comsSlice";
 import { IEditText } from "@/types/componentsType";
+import { updateStatus as updateStatusInEditor } from "@/store/editorSlice";
+import { useLocation } from "react-router-dom";
 const { TextArea } = Input;
 function DescEditor({ configKey, configs }: IEditText) {
     const dispatch = useDispatch();
-
+    const location = useLocation();
     const handleDescChange = (e: any) => {
         const text = e.target.value;
-        dispatch(updateStatus({ configKey, status: text }))
+        if (location.pathname.includes("editor")) {
+            dispatch(updateStatusInEditor({ configKey, status: text }))
+        } else {
+            dispatch(updateStatus({ configKey, status: text }))
+        }
     }
     return (
         <div>

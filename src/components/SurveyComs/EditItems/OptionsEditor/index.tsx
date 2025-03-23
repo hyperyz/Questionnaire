@@ -3,14 +3,21 @@ import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import { updateStatus } from "@/store/comsSlice";
 import { useDispatch } from "react-redux";
 import { IEditArray } from "@/types/componentsType";
+import { updateStatus as updateStatusInEditor } from "@/store/editorSlice";
+import { useLocation } from "react-router-dom";
 
 function DescEditor({ configKey, configs }: IEditArray) {
     const dispatch = useDispatch();
-
+    const location = useLocation()
     const handleAddOption = () => {
         const len = configs.status.length;
         const arr = [...configs.status, `新增选项${len + 1}`]
-        dispatch(updateStatus({ configKey, status: arr }))
+        if (location.pathname.includes('editor')) {
+            updateStatusInEditor({ configKey, status: arr })
+        } else {
+            dispatch(updateStatus({ configKey, status: arr }))
+
+        }
     }
 
     const handleRemoveOption = (index: number) => {
