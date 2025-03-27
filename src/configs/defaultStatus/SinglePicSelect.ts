@@ -1,10 +1,8 @@
 // 单选图片的JSON-Schema配置
-import SinglePicSelect from "@/components/QnComponents/Components/SelectComs/SinglePicSelect"
 import { v4 as uuidv4 } from "uuid"
 
 export default function () {
     return {
-        type: SinglePicSelect,
         name: 'single-pic-select',
         id: uuidv4(),
         status: {

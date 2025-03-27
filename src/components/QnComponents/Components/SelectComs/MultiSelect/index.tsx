@@ -1,24 +1,16 @@
 import MaterialsHeader from "@/components/QnComponents/Common/MaterialsHeader"
 import { useOutletContext } from "react-router-dom";
 import { IComponentHeader } from "@/types/componentsType";
-import { useDispatch } from "react-redux";
-import { updateCurrentCom } from "@/store/comsSlice";
-import { useEffect } from "react";
 import { Checkbox } from 'antd';
 import type { GetProp } from 'antd';
+import useChangeCurrentCom from "@/utils/hooks/useChangeCurrentCom";
 
 function MultiSelect({ status }: any) {
 
   const outletContext: IComponentHeader = useOutletContext() || status;
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = outletContext
 
-  console.log('看看多选', outletContext);
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(updateCurrentCom("multi-select"))
-  }, [])
-
+  useChangeCurrentCom()
   const onCheckBoxChange: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
     console.log('checked = ', checkedValues);
   }

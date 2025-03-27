@@ -1,26 +1,20 @@
 import MaterialsHeader from "@/components/QnComponents/Common/MaterialsHeader"
 import { Radio } from 'antd';
 import type { RadioChangeEvent } from 'antd';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { IComponentHeader } from "@/types/componentsType";
-import { useDispatch } from "react-redux";
-import { updateCurrentCom } from "@/store/comsSlice";
-
+import useChangeCurrentCom from "@/utils/hooks/useChangeCurrentCom";
 function SingleSelect({ status }: any) {
   const outletContext: IComponentHeader = useOutletContext() || status;
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = outletContext
-
   const [optionValue, setOptionValue] = useState(options.currentStatus);
-  const dispatch = useDispatch()
+  useChangeCurrentCom()
 
   const onOptionChange = (e: RadioChangeEvent) => {
     setOptionValue(e.target.value);
   };
 
-  useEffect(() => {
-    dispatch(updateCurrentCom("single-select"))
-  }, [])
 
   return (
     <div className={position.currentStatus === 0 ? "" : "text-center"}>

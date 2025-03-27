@@ -1,19 +1,13 @@
 import MaterialsHeader from "@/components/QnComponents/Common/MaterialsHeader";
-import { updateCurrentCom } from "@/store/comsSlice"
 import { IComponentHeader } from "@/types/componentsType";
-import { useEffect } from "react"
-import { useDispatch } from "react-redux"
 import { useOutletContext } from "react-router-dom";
+import useChangeCurrentCom from "@/utils/hooks/useChangeCurrentCom";
 
 function MultiPicSelect({ status }: any) {
   const outletContext: IComponentHeader = useOutletContext() || status;
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = outletContext
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(updateCurrentCom("multi-pic-select"))
-  }, [])
-
+  useChangeCurrentCom()
 
   return (
     <div className={position.currentStatus === 0 ? "" : "text-center"}>

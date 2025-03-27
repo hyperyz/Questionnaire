@@ -25,10 +25,10 @@ export default createBrowserRouter([
         Component: Market,
         children: [
             {
-                path: '',
+                path: 'select-group',
                 Component: SelectGroup,
                 children: [
-                    { index: true, Component: SingleSelect },
+                    { path: 'single-select', Component: SingleSelect },
                     { path: 'multi-select', Component: MultiSelect },
                     { path: 'option-select', Component: OptionSelect },
                     { path: 'single-pic-select', Component: SinglePicSelect },

@@ -1,10 +1,8 @@
 // 单选的JSON-Schema配置
-import SingleSelect from "@/components/QnComponents/Components/SelectComs/SingleSelect"
 import { v4 as uuidv4 } from "uuid"
 
 export default function () {
     return {
-        type: SingleSelect,
         name: 'single-select',
         id: uuidv4(),
         // 组件的状态：组件的每一个能够修改的状态都应该对应一个编辑组件

@@ -12,7 +12,7 @@ function Market(): React.ReactElement {
                 <div className={`${styles.container} mc flex`}>
                     {/* 左侧垂直导航栏 */}
                     <nav className={`${styles.category} mc`}>
-                        <Link className={styles['category-item']} to="/components">
+                        <Link className={styles['category-item']} to="/components/select-group">
                             <CheckOutlined />
                             <div>选择</div>
                         </Link>

@@ -1,10 +1,8 @@
 // 多选的JSON-Schema配置
-import MultiSelect from "@/components/QnComponents/Components/SelectComs/MultiSelect"
 import { v4 as uuidv4 } from "uuid"
 
 export default function () {
     return {
-        type: MultiSelect,
         name: 'multi-select',
         id: uuidv4(),
         // 组件的状态：组件的每一个能够修改的状态都应该对应一个编辑组件
