@@ -1,23 +1,41 @@
-import MaterialsHeader from "@/components/SurveyComs/Common/MaterialsHeader"
+import MaterialsHeader from "@/components/QnComponents/Common/MaterialsHeader"
 import { Radio } from 'antd';
 import type { RadioChangeEvent } from 'antd';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { IComponentHeader } from "@/types/componentsType";
+import { useDispatch } from "react-redux";
+import { updateCurrentCom } from "@/store/comsSlice";
 
 function SingleSelect({ status }: any) {
   const outletContext: IComponentHeader = useOutletContext() || status;
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = outletContext
 
   const [optionValue, setOptionValue] = useState(options.currentStatus);
+  const dispatch = useDispatch()
 
   const onOptionChange = (e: RadioChangeEvent) => {
     setOptionValue(e.target.value);
   };
 
+  useEffect(() => {
+    dispatch(updateCurrentCom("single-select"))
+  }, [])
+
   return (
     <div className={position.currentStatus === 0 ? "" : "text-center"}>
-      <MaterialsHeader title={title.status} desc={desc.status} titleSize={titleSize.status[titleSize.currentStatus]} descSize={descSize.status[descSize.currentStatus]} titleWeight={titleWeight.currentStatus} descWeight={descWeight.currentStatus} titleItalic={titleItalic.currentStatus} descItalic={descItalic.currentStatus} titleColor={titleColor.status} descColor={descColor.status} />
+      <MaterialsHeader
+        title={title.status}
+        desc={desc.status}
+        titleSize={titleSize.status[titleSize.currentStatus]}
+        descSize={descSize.status[descSize.currentStatus]}
+        titleWeight={titleWeight.currentStatus}
+        descWeight={descWeight.currentStatus}
+        titleItalic={titleItalic.currentStatus}
+        descItalic={descItalic.currentStatus}
+        titleColor={titleColor.status}
+        descColor={descColor.status}
+      />
       <Radio.Group
         onChange={onOptionChange}
         value={optionValue}

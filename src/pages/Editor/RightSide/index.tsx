@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import styles from './index.module.scss';
-import EditPanel from '@/components/SurveyComs/EditPanel';
+import EditPanel from '@/components/QnComponents/EditPanel';
 
 // 编辑页-右侧
 function RightSide() {

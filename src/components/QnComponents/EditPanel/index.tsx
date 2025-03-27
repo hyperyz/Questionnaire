@@ -8,6 +8,7 @@ function EditPanel({ coms }: any): React.ReactElement {
         return Object.keys(coms.status).map((key: string) => {
             const comName = coms.status[key].name;
             const EditComponent = nameToEditorComMap[comName];
+            console.log('EditComponent', EditComponent);
 
             if (coms.status[key].isShow) {
                 return (

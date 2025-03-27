@@ -42,8 +42,8 @@ function App(): React.ReactElement {
         <div className="container">
             <h1 className="font-weight-100 text-center">柚子问卷系统</h1>
             <Flex gap="small" wrap>
-                <Button type="primary" icon={<PlusOutlined />} onClick={() => navigate('/editor')}>创建问卷</Button>
-                <Button color="pink" variant="solid" icon={<CompassOutlined />} onClick={() => navigate('/materials')}>组件市场</Button>
+                    <Button type="primary" icon={<PlusOutlined />} onClick={() => navigate('/editor')}>创建问卷</Button>
+                <Button color="pink" variant="solid" icon={<CompassOutlined />} onClick={() => navigate('/components')}>组件市场</Button>
             </Flex>
             <Table columns={columns} />;
         </div>

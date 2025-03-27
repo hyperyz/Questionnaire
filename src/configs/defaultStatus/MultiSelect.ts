@@ -1,23 +1,23 @@
-// 单选的JSON-Schema配置
-import SingleSelect from "@/components/QnComponents/Components/SelectComs/SingleSelect"
+// 多选的JSON-Schema配置
+import MultiSelect from "@/components/QnComponents/Components/SelectComs/MultiSelect"
 import { v4 as uuidv4 } from "uuid"
 
 export default function () {
     return {
-        type: SingleSelect,
-        name: 'single-select',
+        type: MultiSelect,
+        name: 'multi-select',
         id: uuidv4(),
         // 组件的状态：组件的每一个能够修改的状态都应该对应一个编辑组件
         status: {
             title: {
                 id: uuidv4(),
-                status: '单选题默认标题',
+                status: '多选题默认标题',
                 isShow: true,
                 name: 'title-editor',
             },
             desc: {
                 id: uuidv4(),
-                status: '单选题默认描述',
+                status: '多选题默认描述',
                 isShow: true,
                 name: 'desc-editor',
             },

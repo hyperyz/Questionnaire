@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Materials from "../pages/Market";
+import Market from "../pages/Market";
 import Editor from "../pages/Editor";
 import Home from "../pages/Home";
 import SelectGroup from "@/pages/Market/SelectGroup";
@@ -8,11 +8,11 @@ import NoteGroup from "@/pages/Market/NoteGroup";
 import ContactGroup from "@/pages/Market/ContactGroup";
 import AdvancedGroup from "@/pages/Market/AdvancedGroup";
 import InfoGroup from "@/pages/Market/InfoGroup";
-import SingleSelect from "@/components/SurveyComs/Materials/SelectComs/SingleSelect"
-import MultiSelect from "@/components/SurveyComs/Materials/SelectComs/MultiSelect"
-import OptionSelect from "@/components/SurveyComs/Materials/SelectComs/OptionSelect"
-import SinglePicSelect from "@/components/SurveyComs/Materials/SelectComs/SinglePicSelect";
-import MultiPicSelect from "@/components/SurveyComs/Materials/SelectComs/MultiPicSelect";
+import SingleSelect from "@/components/QnComponents/Components/SelectComs/SingleSelect"
+import MultiSelect from "@/components/QnComponents/Components/SelectComs/MultiSelect"
+import OptionSelect from "@/components/QnComponents/Components/SelectComs/OptionSelect"
+import SinglePicSelect from "@/components/QnComponents/Components/SelectComs/SinglePicSelect";
+import MultiPicSelect from "@/components/QnComponents/Components/SelectComs/MultiPicSelect";
 import Outline from "@/pages/Editor/LeftSide/Outline";
 import SurveyType from "@/pages/Editor/LeftSide/SurveyType";
 export default createBrowserRouter([
@@ -21,8 +21,8 @@ export default createBrowserRouter([
         Component: Home
     },
     {
-        path: '/materials',
-        Component: Materials,
+        path: '/components',
+        Component: Market,
         children: [
             {
                 path: '',

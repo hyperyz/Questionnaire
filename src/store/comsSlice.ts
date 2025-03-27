@@ -4,24 +4,30 @@ import { defaultStatusMap } from "@/configs/defaultStatus/defaultStatusMap";
 const counterSlice = createSlice({
     name: "coms",
     initialState: {
-        "currentMaterialCom": "single-select",
+        "currentCom": "single-select",
         "coms": {
             "single-select": defaultStatusMap["single-select"](),
+            "single-pic-select": defaultStatusMap["single-pic-select"](),
+            "multi-select": defaultStatusMap["multi-select"](),
+            "multi-pic-select": defaultStatusMap["multi-pic-select"](),
         }
-        // "multi-select": defaultStatusMap["multi-select"],
     },
     reducers: {
+        updateCurrentCom: (state: any, action: PayloadAction<string>) => {
+            let currentComName = action.payload;
+            state.currentCom = currentComName;
+        },
         updateStatus: (state: any, action: PayloadAction<any>) => {
             const { configKey, status } = action.payload;
             if (configKey === 'position' || configKey === 'titleSize' || configKey === 'descSize' || configKey === 'titleItalic' || configKey === 'descItalic' || configKey === 'titleWeight' || configKey === 'descWeight') {
-                state.coms[state.currentMaterialCom].status[configKey].currentStatus = status;
+                state.coms[state.currentCom].status[configKey].currentStatus = status;
             }
             if (configKey === 'title' || configKey === 'desc' || configKey === 'titleColor' || configKey === 'descColor' || configKey === 'options') {
-                state.coms[state.currentMaterialCom].status[configKey].status = status;
+                state.coms[state.currentCom].status[configKey].status = status;
             }
         }
     },
 });
 
-export const { updateStatus } = counterSlice.actions;
+export const { updateCurrentCom, updateStatus } = counterSlice.actions;
 export default counterSlice;
