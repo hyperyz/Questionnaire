@@ -1,17 +1,16 @@
 import React from "react"
 import styles from "./index.module.scss"
 import { nameToEditorComMap } from "@/configs/nameToEditorMap";
-function EditPanel({ coms }: any): React.ReactElement {
-
-    function handleEditItems(coms: any) {
-        return Object.keys(coms.status).map((key: string) => {
-            const comName = coms.status[key].name;
+import { IComponentHeader } from "@/types/componentsType";
+function EditPanel({ coms }: { coms: IComponentHeader }): React.ReactElement {
+    function handleEditItems(coms: IComponentHeader) {
+        return Object.keys(coms).map((key: string) => {
+            const comName = coms[key].name;
             const EditComponent = nameToEditorComMap[comName];
-
-            if (coms.status[key].isShow) {
+            if (coms[key].isShow) {
                 return (
                     <div key={key}>
-                        <EditComponent configKey={key} configs={coms.status[key]} />
+                        <EditComponent configKey={key} configs={coms[key]} />
                     </div>
                 );
             }

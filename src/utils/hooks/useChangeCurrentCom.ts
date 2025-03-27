@@ -7,6 +7,8 @@ function useChangeCurrentCom() {
     const dispatch = useDispatch()
     const location = useLocation()
     const comName = location.pathname.split("/").pop();
+    console.log("comName", comName);
+    
     useEffect(() => {
         dispatch(updateCurrentCom(comName as string));
     }, [])

@@ -3,7 +3,11 @@ import SinglePicSelect from '@/components/QnComponents/Components/SelectComs/Sin
 import MultiSelect from "@/components/QnComponents/Components/SelectComs/MultiSelect"
 import MultiPicSelect from "@/components/QnComponents/Components/SelectComs/MultiPicSelect"
 
-export const nameToComMap = {
+interface INameToComMap {
+    [key: string]: any
+}
+
+export const nameToComMap: INameToComMap = {
     "single-select": SingleSelect,
     "single-pic-select": SinglePicSelect,
     "multi-select": MultiSelect,

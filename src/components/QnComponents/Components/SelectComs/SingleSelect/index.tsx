@@ -6,6 +6,8 @@ import { useOutletContext } from "react-router-dom";
 import { IComponentHeader } from "@/types/componentsType";
 import useChangeCurrentCom from "@/utils/hooks/useChangeCurrentCom";
 function SingleSelect({ status }: any) {
+  console.log('single select', status);
+  
   const outletContext: IComponentHeader = useOutletContext() || status;
   const { title, desc, options, position, titleSize, descSize, titleWeight, descWeight, titleItalic, descItalic, titleColor, descColor } = outletContext
   const [optionValue, setOptionValue] = useState(options.currentStatus);
@@ -14,6 +16,7 @@ function SingleSelect({ status }: any) {
   const onOptionChange = (e: RadioChangeEvent) => {
     setOptionValue(e.target.value);
   };
+
 
 
   return (

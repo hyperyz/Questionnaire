@@ -1,7 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { defaultStatusMap } from "@/configs/defaultStatus/defaultStatusMap";
 
-const counterSlice = createSlice({
+interface IComsState {
+    currentCom: string;
+    coms: {
+        [key: string]: any;
+    };
+}
+
+const comsSlice = createSlice({
     name: "coms",
     initialState: {
         "currentCom": "single-select",
@@ -11,7 +18,7 @@ const counterSlice = createSlice({
             "multi-select": defaultStatusMap["multi-select"](),
             "multi-pic-select": defaultStatusMap["multi-pic-select"](),
         }
-    },
+    } as IComsState,
     reducers: {
         updateCurrentCom: (state: any, action: PayloadAction<string>) => {
             let currentComName = action.payload;
@@ -29,5 +36,5 @@ const counterSlice = createSlice({
     },
 });
 
-export const { updateCurrentCom, updateStatus } = counterSlice.actions;
-export default counterSlice;
+export const { updateCurrentCom, updateStatus } = comsSlice.actions;
+export default comsSlice;

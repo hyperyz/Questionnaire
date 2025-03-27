@@ -24,6 +24,7 @@ export interface IEditText extends IBase {
 }
 
 export interface IComponentHeader {
+    [key: string]: IStatusText | IStatusArray
     title: IStatusText
     desc: IStatusText
     options: IStatusArray

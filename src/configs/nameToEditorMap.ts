@@ -8,7 +8,10 @@ import PositionEditor from "@/components/QnComponents/EditItems/PositionEditor"
 import ItalicEditor from "@/components/QnComponents/EditItems/ItalicEditor"
 import PicOptionsEditor from "@/components/QnComponents/EditItems/PicOptionsEditor"
 
-export const nameToEditorComMap = {
+interface INameToEditorComMap {
+    [key: string]: any
+}
+export const nameToEditorComMap: INameToEditorComMap = {
     "title-editor": TitleEditor,
     "desc-editor": DescEditor,
     "options-editor": OptionsEditor,
